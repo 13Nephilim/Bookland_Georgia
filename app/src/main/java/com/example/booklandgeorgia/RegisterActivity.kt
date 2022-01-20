@@ -37,54 +37,74 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun registerListeners(){
-        val email = eemail.text.toString()
-        val password = ppassword.text.toString()
-        val password2 = cconfirmPassword.text.toString()
-        val name = nname.text.toString()
+
+
+        alreadyRegistered.setOnClickListener{
+            val intent = Intent(this, VeryFirstPageActivity::class.java)
+            startActivity(intent)
+        }
 
 
         register.setOnClickListener{
-        if (email.isEmpty()) {
+
+            val email = eemail.text.toString()
+            val password = ppassword.text.toString()
+            val password2 = cconfirmPassword.text.toString()
+            val name = nname.text.toString()
+
+            if (email.isEmpty()) {
             eemail.error = "შეიყვანეთ მეილი!"
             return@setOnClickListener
-        }
-        else if (name.isEmpty()){
+            }
+
+            else if (name.isEmpty()){
             nname.error = "შეიყვანეთ სახელი!"
             return@setOnClickListener
-        }
-        else if (password != password2) {
+            }
+
+            else if (password != password2) {
             Toast.makeText(this, "პაროლები უნდა ემთხვეოდეს ერთმანეთს!", Toast.LENGTH_SHORT).show()
             return@setOnClickListener
-        }
-        else if (email.length<8){
+            }
+
+            else if (email.length<8){
             eemail.error = "მეილი არასწორადაა შეყვანილი"
             return@setOnClickListener
-        }
-        else if (!email.contains("@") || !email.contains(".")){
+            }
+
+            else if (!email.contains("@") || !email.contains(".")){
             eemail.error = "მეილი არასწორადაა შეყვანილი"
-        }
-        else if (password.isEmpty()){
+            }
+
+            else if (password.isEmpty()){
             ppassword.error = "შეიყვანეთ პაროლი"
             return@setOnClickListener
-        }
-        else if (password2.isEmpty()) {
+            }
+
+            else if (password2.isEmpty()) {
             cconfirmPassword.error = "შეიყვანეთ პაროლი"
             return@setOnClickListener
-        }
-        else if(password.length<8){
+            }
+
+            else if(password.length<8){
             ppassword.error = "პაროლი უნდა შეიცავდეს მინიმუმ 8 სიმბოლოს"
             return@setOnClickListener
-        }
+            }
 
-        FirebaseAuth.getInstance()
-            .createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful){
-                    val intent = Intent(this, VeryFirstPageActivity::class.java)
-                    startActivity(intent)
-                } else {
-                    Toast.makeText(this, "დაფიქსირდა შეცდომა!", Toast.LENGTH_SHORT).show()
+
+            FirebaseAuth.getInstance()
+                .createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        val intent = Intent(this, VeryFirstPageActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        Toast.makeText(this, "სამწუხაროდ თქვენ ვერ გაიარეთ რეგისტრაცია!", Toast.LENGTH_SHORT).show()
+                    }
+
                 }
-    }
 
-}}}
+        }
+    }   }
+

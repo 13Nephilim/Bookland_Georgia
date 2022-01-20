@@ -1,15 +1,16 @@
 package com.example.booklandgeorgia
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.example.booklandgeorgia.dataclasses.UserInfo
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.UserInfo
 import com.google.firebase.database.*
+import com.google.firebase.database.DatabaseReference
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -22,7 +23,6 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var editTextPersonName: TextView
     private lateinit var editTextUrl: TextView
     private lateinit var button: Button
-    private lateinit var passwordChange: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,17 +63,12 @@ class ProfileActivity : AppCompatActivity() {
 
     private fun registerListeners() {
 
-        passwordChange.setOnClickListener{
-            val intent = Intent(this, PasswordChangeActivity::class.java)
-            startActivity(intent)
-        }
-
         button.setOnClickListener {
 
             val name = editTextPersonName.text.toString()
             val url = editTextUrl.text.toString()
 
-            val userInfo = com.example.booklandgeorgia.dataclasses.UserInfo(name, url)
+            val userInfo = UserInfo(name, url)
 
 
             dbUserInfo.child(auth.currentUser?.uid!!).setValue(userInfo)

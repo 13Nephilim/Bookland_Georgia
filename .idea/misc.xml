@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/xjeko/AndroidStudioProjects/BooklandGeorgia2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14322916666666666" />
         <entry key="..\:/Users/xjeko/AndroidStudioProjects/BooklandGeorgia2/app/src/main/res/drawable/background_1.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/xjeko/AndroidStudioProjects/BooklandGeorgia2/app/src/main/res/drawable/buttons_1.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/xjeko/AndroidStudioProjects/BooklandGeorgia2/app/src/main/res/drawable/buttons_2.xml" value="0.26614583333333336" />
@@ -29,6 +30,7 @@
         <entry key="..\:/Users/xjeko/AndroidStudioProjects/BooklandGeorgia2/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/xjeko/AndroidStudioProjects/BooklandGeorgia2/app/src/main/res/layout/activity_reset_password.xml" value="0.25" />
         <entry key="..\:/Users/xjeko/AndroidStudioProjects/BooklandGeorgia2/app/src/main/res/layout/activity_very_first_page.xml" value="0.25" />
+        <entry key="..\:/Users/xjeko/AndroidStudioProjects/BooklandGeorgia2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14322916666666666" />
       </map>
     </option>
   </component>
