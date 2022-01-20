@@ -96,7 +96,7 @@ class RegisterActivity : AppCompatActivity() {
                 .createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        val intent = Intent(this, VeryFirstPageActivity::class.java)
+                        val intent = Intent(this, MenuPageActivity::class.java)
                         startActivity(intent)
                         finish()
                     } else {

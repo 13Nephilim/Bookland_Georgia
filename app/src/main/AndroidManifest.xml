@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BooklandGeorgia">
         <activity
+            android:name=".MoreInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".PasswordChangeActivity"
             android:exported="false" />
         <activity

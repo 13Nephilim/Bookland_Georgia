@@ -1,6 +1,7 @@
 package com.example.booklandgeorgia
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -23,6 +24,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var editTextPersonName: TextView
     private lateinit var editTextUrl: TextView
     private lateinit var button: Button
+    private lateinit var btnChange: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,15 +55,23 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        imageView = findViewById(R.id.imageView2)
+        imageView = findViewById(R.id.imageView5)
         textView = findViewById(R.id.textView5)
         editTextPersonName = findViewById(R.id.editTextPersonName)
         editTextUrl = findViewById(R.id.editTextUrl)
         button = findViewById(R.id.button13)
+        btnChange = findViewById(R.id.buttonChange)
     }
 
 
     private fun registerListeners() {
+
+        btnChange.setOnClickListener {
+            val intent = Intent(this, PasswordChangeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
 
         button.setOnClickListener {
 

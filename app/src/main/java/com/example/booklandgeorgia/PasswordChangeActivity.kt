@@ -24,7 +24,7 @@ class PasswordChangeActivity : AppCompatActivity() {
 
     private fun init(){
         editTextNewPassword = findViewById(R.id.editTextTextPassword)
-        buttonChange = findViewById(R.id.buttonChange)
+        buttonChange = findViewById(R.id.buttonSend)
     }
 
     private fun registerListeners(){
