@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BooklandGeorgia">
         <activity
+            android:name=".AllBooksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CategoriesActivity"
+            android:exported="false" />
+        <activity
             android:name=".MoreInfoActivity"
             android:exported="false" />
         <activity

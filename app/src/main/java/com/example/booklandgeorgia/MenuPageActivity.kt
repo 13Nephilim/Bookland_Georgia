@@ -33,6 +33,16 @@ class MenuPageActivity : AppCompatActivity() {
     }
 
     private fun registerListeners() {
+        allBook.setOnClickListener {
+            val intent = Intent(this, AllBooksActivity::class.java)
+            startActivity(intent)
+        }
+
+        categories.setOnClickListener {
+            val intent = Intent(this, CategoriesActivity::class.java)
+            startActivity(intent)
+        }
+
         profile.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
